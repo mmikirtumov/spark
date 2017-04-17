@@ -1,0 +1,23 @@
+﻿{
+  "title": "JSON Schema for patient resource",
+
+  "type": "object",
+
+  "properties": {
+    "identifier": {
+      "properties": {
+        "system": {
+          "pattern": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$"
+        }
+      }
+    },
+    "name": {
+      "type": "array",
+      "maxItems": 1,
+      "minItems": 1
+    },
+    "gender": {
+      "enum": [ "male", "female", "other", "unknown" ]
+    }
+  }
+}

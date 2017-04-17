@@ -20,6 +20,7 @@ using Hl7.Fhir.Rest;
 using Spark.Core;
 using Spark.Engine.Extensions;
 using Spark.Engine.Core;
+using Spark.Engine.Validation;
 
 namespace Spark.Formatters
 {
@@ -44,6 +45,11 @@ namespace Spark.Formatters
                 try
                 {
                     var body = base.ReadBodyFromStream(readStream, content);
+                
+                    if (!CustomValidation.ValidateJson(body))
+                    {
+                      throw Error.BadRequest(CustomValidation.ErrorMessages);
+                    }
 
                     if (typeof(Resource).IsAssignableFrom(type))
                     {

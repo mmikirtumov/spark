@@ -79,5 +79,10 @@ namespace Spark.Engine {
                 return ResourceManager.GetString("RenderXMLasHTML", resourceCulture);
             }
         }
-    }
+
+      internal static object JsonValidSchema(string fileName)
+      {
+         return ResourceManager.GetObject(fileName, resourceCulture);
+      }
+  }
 }
