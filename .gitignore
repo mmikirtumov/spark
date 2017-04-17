@@ -220,5 +220,3 @@ _Pvt_Extensions
 #NDepend
 NDependOut/
 *.ndproj
-/src/Spark.Mongo
-/src/Spark
